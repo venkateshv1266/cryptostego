@@ -33,7 +33,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js",
-    "build": "cd frontend && npm install && npm run build && cd.."
+    "build": "cd frontend && npm install && npm run build && cd .."
 },
   "author": "",
   "license": "ISC",
