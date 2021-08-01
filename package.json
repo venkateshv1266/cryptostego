@@ -36,7 +36,7 @@
     "heroku-postbuild": "npm run install-frontend && npm run build",
     "start": "node server.js",
     "frontend": "cd frontend && npm start",
-    "dev": "concurrently -n 'server,frontend' -c 'red,green'  \"nodemon server.js\" \"npm run frontend\""
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run frontend\""
   },
   "author": "",
   "license": "ISC"
