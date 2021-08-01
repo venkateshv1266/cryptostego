@@ -34,9 +34,9 @@
     "build": "cd frontend && npm run build",
     "install-frontend": "cd frontend && npm install",
     "heroku-postbuild": "npm run install-frontend && npm run build",
-    "start": "node backend/server.js",
+    "start": "node server.js",
     "frontend": "cd frontend && npm start",
-    "dev": "concurrently -n 'server,frontend' -c 'red,green'  \"nodemon backend/server.js\" \"npm run frontend\""
+    "dev": "concurrently -n 'server,frontend' -c 'red,green'  \"nodemon server.js\" \"npm run frontend\""
   },
   "author": "",
   "license": "ISC"
