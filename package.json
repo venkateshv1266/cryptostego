@@ -17,6 +17,7 @@
     "google-auth-library": "^7.1.2",
     "googleapis": "^77.0.0",
     "hogan.js": "^3.0.2",
+    "http": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.13",
     "nodemailer": "^6.6.2",
@@ -36,5 +37,8 @@
   },
   "author": "",
   "license": "ISC",
-  "engines": {"node": "14.15.0", "npm":"6.14.0"}
+  "engines": {
+    "node": "14.15.0",
+    "npm": "6.14.0"
+  }
 }

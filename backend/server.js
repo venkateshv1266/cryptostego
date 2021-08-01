@@ -1,3 +1,4 @@
+import http from 'http'
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -42,6 +43,8 @@ app.get('/api/data', (req,res) => {
 //     res.status(200).send(`Server Connected at PORT ${process.env.PORT}`);
 // });
 
-app.listen(port, () => {
+const httpServer = http.Server(app);
+
+httpServer.listen(port, () => {
     console.log(`Listening to port at ${port}`);
 });
