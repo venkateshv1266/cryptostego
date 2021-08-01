@@ -21,8 +21,8 @@ const port = process.env.PORT || 5000;
 app.use(express.json({limit: '500mb'})); 
 app.use(express.urlencoded({ extended: true, limit: '500mb'}));
 
-app.use(express.static(path.join(__dirname, '/frontend/build'))); //to serve the frontend files
-app.get('*', (req,res) => res.sendFile(path.join(__dirname, '/frontend/build/index.html')));
+app.use(express.static(path.join(__dirname, '../frontend/build'))); //to serve the frontend files
+app.get('*', (req,res) => res.sendFile(path.join(__dirname, '../frontend/build/index.html')));
 
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
