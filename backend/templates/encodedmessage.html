@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;">
+<head style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;">
+    <meta charset="UTF-8" style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;">
+    <title style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;">Encoded Message</title>
+    
+</head>
+<body style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif; background-color: #cfcfcf; ">
+    <nav style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;position: sticky;top: 0;z-index: 10;">
+        <div style="justify-content: flex-start;margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;background-color: #01193d;height: 80px;">
+            <h1 style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;color: #fff;padding: 24px;">CryptoStego</h1>
+        </div>
+    </nav>
+    <div style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif; margin: 20px auto; max-width: 650px; ">
+        <div class="mainDiv" style="color: #333333;background-color: #f6f6f6; margin: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 10px 0;">
+            <div class="mainSubDiv1" style="margin: 20px;text-align: center;">
+                <h1 style="font-size: 25px;">Encoded Message</h1>
+                
+            </div>
+            
+            <div class="mainSubDiv2" style="text-align: center;margin: 20px;">
+                <p style="line-height: 30px;text-align: center; margin-bottom: 30px;">Here is your stego image id and it's corresponding secret key.</p>
+                <div class="encodedMessageData" style="font-size: 14px;margin-bottom: 40px;border: 1px solid #b1b1b1;border-radius: 10px;padding: 10px;">
+                    <div class="row" style="display: flex;width: 100%;">
+                        <p>Stego Image ID:</p>
+                        <span style="font-weight: 700;margin: 1em 0;text-align: right;margin-left: auto;">{{stegoImageID}}</span>
+                    </div>
+                    <div class="row" style="display: flex;width: 100%;">
+                        <p>Secret Key: </p>
+                        <span style="font-weight: 700;margin: 1em 0;text-align: right;margin-left: auto;">{{secretKey}}</span>
+                    </div>
+                </div>
+                <a class="resetPassword" href="{{cryptoStegoLink}}" style="text-decoration: none;background-color: #01193d;color: #fff;padding: 10px; border-radius: 5px;font-size: 15px;">Open CryptoStego</a>
+                <p style="line-height: 30px;text-align: center; margin-top: 30px;">You can use the above information to decode the message.
+                </p>
+            </div>
+        </div>        
+    </div>
+    <footer style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;margin-top: auto;">
+        <div style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;background-color: #01193d; text-align:center; height: 80px;">
+            <p style="margin: 0;font-family: 'Encode Sans Expanded',
+            sans-serif;color: #fff; padding: 30px;">© All rights are reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

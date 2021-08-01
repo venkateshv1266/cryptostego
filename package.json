@@ -1,0 +1,38 @@
+{
+  "name": "crypto-stego",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/lab": "^4.0.0-alpha.58",
+    "@sendgrid/mail": "^7.4.5",
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "crypto-js": "^4.0.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "google-auth-library": "^7.1.2",
+    "googleapis": "^77.0.0",
+    "hogan.js": "^3.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.13",
+    "nodemailer": "^6.6.2",
+    "nodemon": "^2.0.7",
+    "react-checkmark": "^1.4.0",
+    "react-google-login": "^5.2.2",
+    "react-loading": "^2.0.3",
+    "react-redux": "^7.2.4",
+    "react-scroll": "^1.8.2",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

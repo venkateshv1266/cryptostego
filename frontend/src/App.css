@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  font-family: 'Encode Sans Expanded',
+  sans-serif;
+}
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+nav {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10;
+}
+footer {
+  margin-top: auto;
+}
