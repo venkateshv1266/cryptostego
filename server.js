@@ -31,7 +31,7 @@ app.get('/api/data', (req,res) => {
 });
 
 app.get('/', (req, res) => {
-    res.status(200).send(`Server Connected at PORT: ${process.env.PORT}`);
+    res.status(200).send(`Server Connected at PORT ${process.env.PORT}`);
 });
 
 if(process.env.NODE_ENV == "production") {
