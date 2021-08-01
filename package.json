@@ -31,13 +31,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "cd frontend && npm run build",
-    "install-frontend": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-frontend && npm run build",
-    "start": "node server.js",
-    "frontend": "cd frontend && npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run frontend\""
+    "build": "cd frontend && npm install && npm run build",
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {"node": "14.15.0", "npm":"6.14.0"}
 }
