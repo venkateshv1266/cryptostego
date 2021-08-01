@@ -38,19 +38,9 @@ app.get('/api/data', (req,res) => {
     res.send(data);
 });
 
-<<<<<<< HEAD:backend/server.js
 // app.get('/', (req, res) => {
 //     res.status(200).send(`Server Connected at PORT ${process.env.PORT}`);
 // });
-=======
-app.get('/', (req, res) => {
-    res.status(200).send(`Server Connected at PORT ${process.env.PORT}`);
-});
-
-if(process.env.NODE_ENV === "production") {
-    app.use(express.static("frontend/build"));
-}
->>>>>>> fcc41bef59ca3d70f94c4f9913fd37b46076b568:server.js
 
 app.listen(port, () => {
     console.log(`Listening to port at ${port}`);
