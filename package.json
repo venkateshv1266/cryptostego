@@ -31,7 +31,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js && cd frontend && npm start"
   },
   "author": "",
   "license": "ISC"
