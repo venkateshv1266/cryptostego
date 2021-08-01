@@ -31,7 +31,12 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js && cd frontend && npm start"
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && npm install",
+    "heroku-postbuild": "npm run install-frontend && npm run build",
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js",
+    "frontend": "cd frontend && npm start",
+    "dev": "concurrently -n 'server,frontend' -c 'red,green'  \"nodemon backend/server.js\" \"npm run frontend\""
   },
   "author": "",
   "license": "ISC"

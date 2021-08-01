@@ -6,6 +6,12 @@ import imageRouter from './imageRouter.js';
 import userRouter from './userRouter.js';
 import sendEmailRouter from './sendEmailRouter.js';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 //To read the content of .env file
 dotenv.config();
 
@@ -33,6 +39,10 @@ app.get('/api/data', (req,res) => {
 app.get('/', (req, res) => {
     res.status(200).send('Server Connected');
 });
+
+if(process.env.NODE_ENV == "production") {
+    app.use(express.static(path.join(__dirname, '../frontend/build')));
+}
 
 app.listen(port, () => {
     console.log(`Listening to port at ${port}`);
