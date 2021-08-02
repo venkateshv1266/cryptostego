@@ -106,7 +106,7 @@ function EncodingScreen(props) {
                                         </div>
                                         
                                         <label htmlFor="secretkey">Secret key</label>
-                                        <input type="text" id="secretkey" placeholder="Enter secret key" value={secretKey} onChange={e => setSecretKey(e.target.value)}/>
+                                        <input type="password" id="secretkey" placeholder="Enter secret key" value={secretKey} onChange={e => setSecretKey(e.target.value)}/>
 
                                         <button type="submit" className="formBtn">Encode</button>
                                         

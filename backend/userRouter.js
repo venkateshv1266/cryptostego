@@ -61,7 +61,7 @@ userRouter.post(
                 from: `CryptoStego <${process.env.HOST}>`,
                 to: createdUser.email,
                 subject: 'Welcome to CryptoStego',
-                html: compiledWelcomeTemplate.render({name: createdUser.name, cryptoStegoLink:"http://localhost:3000"})
+                html: compiledWelcomeTemplate.render({name: createdUser.name, cryptoStegoLink:"https://cryptostego.herokuapp.com/"})
             };
             sendEmail(mailOptions);
             res.send({
@@ -90,7 +90,7 @@ userRouter.post(
                 from: `CryptoStego <${process.env.HOST}>`,
                 to: createdUser.email,
                 subject: 'Welcome to CryptoStego',
-                html: compiledWelcomeTemplate.render({name: createdUser.name, cryptoStegoLink:"http://localhost:3000"})
+                html: compiledWelcomeTemplate.render({name: createdUser.name, cryptoStegoLink:"https://cryptostego.herokuapp.com/"})
             };
             sendEmail(mailOptions);
             res.send({
@@ -111,7 +111,7 @@ userRouter.post(
         user.verifyEmailToken = randomTokenHashed;
         user.verifyEmailTokenExpires = Date.now() + 10 * 60 * 1000;  //Expires in 10 minutes
         await user.save();
-        const resetURL = `http://localhost:3000/verifyemail/${randomToken}`;
+        const resetURL = `https://cryptostego.herokuapp.com/verifyemail/${randomToken}`;
         const mailOptions = {
             from: `CryptoStego <${process.env.HOST}>`,
             to: req.body.email,
@@ -160,7 +160,7 @@ userRouter.post(
         user.passwordResetToken = randomTokenHashed;
         user.passwordResetTokenExpires = Date.now() + 10 * 60 * 1000;  //Expires in 10 minutes
         await user.save();
-        const resetURL = `http://localhost:3000/resetpassword/${randomToken}`;
+        const resetURL = `https://cryptostego.herokuapp.com/resetpassword/${randomToken}`;
         const mailOptions = {
             from: `CryptoStego <${process.env.HOST}>`,
             to: req.body.email,
