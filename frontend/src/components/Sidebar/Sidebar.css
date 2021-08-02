@@ -9,7 +9,6 @@
     top:0;
     left: -100%;
     transition: 0.3s ease-in-out;
-    opacity: 95%;
 }
 .sidebarContainerOpen {
     left: 0;
