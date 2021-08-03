@@ -50,6 +50,9 @@ function DecodingScreen(props) {
         dispatch(isAuthorizedUser(setIsAuthorizedLoading));
         setIsDecoded('');
         dispatch({type:IMAGE_RETRIEVE_CLEAR});
+        if(selectedImageURL !== "/images/blankimage.jpg"){
+            setSelectedImageURL("/images/blankimage.jpg");
+        }
         props.setHeaderBg(true);
         props.setCurrentActive('decoding');
         scroll.scrollToTop();
