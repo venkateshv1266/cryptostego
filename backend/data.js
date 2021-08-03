@@ -21,7 +21,7 @@ const data = {
         Encoding is a function which takes the cover image, message to be encoded and the secret key as input. First the message is encrypted using AES-256 Algorithm using the secret key which is hashed with SHA-256 hash function. Then this encrypted message is encoded inside the cover image using LSB substitution method.
         `,
     encodingNoteContent: `
-        Note: You can either provide the recipient Email ID so that he can decode the image using the Stego Image ID and Secret Key received through his mail or save the Stego Image and send the recipient through any third party file transfer platform (While transferring the image, image quality shouldn't be lost).
+        Note: You can either provide the recipient Email ID so that they can decode the image using the Stego Image ID and Secret Key received through their mail or save the Stego Image and send the recipient through any third party file transfer platform (While transferring the image, image quality shouldn't be lost).
         `,
     decodingContent: `
         Decoding is a function which takes the stego image id, and the secret key as input. The stego image corresponding to the stego image id is retrieved from the database and the encrypted message encoded inside the image is now decoded using LSB decryption method which is then decrypted using AES-256 Algorithm.
