@@ -29,6 +29,8 @@ function DecodingScreen(props) {
     const isAuthorized = useSelector(state => state.isAuthorized); 
     const {type, authorizedUserInfo} = isAuthorized;
 
+    
+
     const submitHandler = (e) => {
         e.preventDefault();
         if(selectedImageURL!=="/images/blankimage.jpg"){
@@ -40,6 +42,10 @@ function DecodingScreen(props) {
         
     }
     useEffect(() => {
+        if((props.location.pathname).length > 9){
+            setStegoImageID((props.location.pathname).slice(10, (props.location.pathname).length))
+        }
+        setStegoImageID((props.location.pathname).slice(10, (props.location.pathname).length))
         dispatch(isAuthorizedUser(setIsAuthorizedLoading));
         setIsDecoded('');
         dispatch({type:IMAGE_RETRIEVE_CLEAR});

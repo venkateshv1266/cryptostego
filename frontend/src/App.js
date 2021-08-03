@@ -93,7 +93,7 @@ function App(props) {
               <EncodingScreen history={props.history} data={data} headerBg={headerBg} setHeaderBg={setHeaderBg} currentActive={currentActive} setCurrentActive={setCurrentActive}/>} 
             ></Route>
             <Route path="/decoding" render={(props) => 
-              <DecodingScreen history={props.history} data={data} headerBg={headerBg} setHeaderBg={setHeaderBg} currentActive={currentActive} setCurrentActive={setCurrentActive} />}
+              <DecodingScreen location={props.location} history={props.history} data={data} headerBg={headerBg} setHeaderBg={setHeaderBg} currentActive={currentActive} setCurrentActive={setCurrentActive} />}
             ></Route>
             <Route path="/verifyemail/:token" render={(props) => 
               <VerifyEmailScreen location={props.location} headerBg={headerBg} setHeaderBg={setHeaderBg} currentActive={currentActive} setCurrentActive={setCurrentActive}/>} 
