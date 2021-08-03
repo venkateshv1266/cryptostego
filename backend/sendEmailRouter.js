@@ -27,7 +27,7 @@ sendEmailRouter.post(
             from: `CryptoStego <${process.env.HOST}>`,
             subject: 'Encoded Message', 
             text: 'Encoded Message',
-            html: compiledTemplate.render({secretKey, stegoImageID: req.body.stegoImageID, cryptoStegoLink:"https://cryptostego.herokuapp.com/"})
+            html: compiledTemplate.render({secretKey, stegoImageID: req.body.stegoImageID, cryptoStegoLink:"https://cryptostego.herokuapp.com/decoding", emailId: req.body.recipientEmail})
         };
 
         const result = await sendEmail(mailOptions);
