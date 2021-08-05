@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import {IconButton} from '@material-ui/core';
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import {Alert} from '@material-ui/lab';
 import CryptoJS from 'crypto-js';
 import ReactLoading from 'react-loading';
@@ -9,6 +12,7 @@ import { resetPassword } from '../actions/userActions';
 function ResetPasswordScreen(props) {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const dispatch = useDispatch();
     const token = (props.location.pathname).slice(15, (props.location.pathname).length); 
 
@@ -22,6 +26,10 @@ function ResetPasswordScreen(props) {
             const hashedPassword = hashDigest.toString(CryptoJS.enc.Hex);
             dispatch(resetPassword(token, hashedPassword))
         }
+    }
+
+    const handleShowPasswordBtnClick = () => {
+        setShowPassword(!showPassword);
     }
     
     useEffect(() => {
@@ -42,9 +50,14 @@ function ResetPasswordScreen(props) {
                             <h1 className="gridColumnHeading">Reset Password</h1>
                             
                             <label htmlFor="password">Password</label>
-                            <input type="password" id="name" placeholder="Enter password" required 
-                                onChange={e => setPassword(e.target.value)}
-                            />
+                            <div className="passwordInput">
+                                <input type={showPassword ? "text" : "password"} id="password" placeholder="Enter password" required 
+                                    onChange={e => setPassword(e.target.value)}
+                                />
+                                <IconButton className="eyeBtn" onClick={handleShowPasswordBtnClick}>
+                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </div>
 
                             {
                                 password && !(/^(?=.*[0-9])(?=.*[!@#$%^&*'])[a-zA-Z0-9!@#$%^&*']{6,16}$/.test(password)) && 

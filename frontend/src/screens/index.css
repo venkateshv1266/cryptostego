@@ -250,6 +250,23 @@ video {
   border-style: solid;
   margin-bottom: 20px;
 }
+.passwordInput {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #b7b8b9;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+.passwordInput > input {
+  outline-width: 0;
+  border-radius: 30px;
+  border: none;
+  margin-left: 10px;
+  width: 100%;
+}
+.eyeBtn  {
+  padding: 7px !important;
+}
 .formBtn {
   border-radius: 30px;
   background: #01193d;
@@ -348,6 +365,7 @@ video {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  font-size: 90%;
 }
 .userProfileDataEmail {
   display: flex;

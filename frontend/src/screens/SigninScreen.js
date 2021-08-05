@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import {IconButton} from '@material-ui/core';
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import { Link } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
 import {animateScroll as scroll} from 'react-scroll';
@@ -13,6 +16,7 @@ import { AUTHORIZE_SUCCESS, USER_SIGNIN_SUCCESS } from '../constants/userConstan
 function SigninScreen(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState(false);
     const [forgotPasswordClicked, setForgotPasswordClicked] = useState(false);
     const dispatch = useDispatch(); 
@@ -37,6 +41,9 @@ function SigninScreen(props) {
         dispatch(signin(email.trim(),hashedPassword));
     }
 
+    const handleShowPasswordBtnClick = () => {
+        setShowPassword(!showPassword);
+    }
     const forgotPasswordSubmitHandler = (e) => {
         e.preventDefault();
         if(email) {
@@ -88,9 +95,15 @@ function SigninScreen(props) {
                                 }
 
                                 <label htmlFor="password">Password</label>
-                                <input type="password" id="name" placeholder="Enter password" required 
-                                    onChange={e => setPassword(e.target.value)}
-                                />
+                                <div className="passwordInput">
+                                    <input type={showPassword ? "text" : "password"} id="password" placeholder="Enter password" required 
+                                        onChange={e => setPassword(e.target.value)}
+                                    />
+                                    <IconButton className="eyeBtn" onClick={handleShowPasswordBtnClick}>
+                                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                                    </IconButton>
+                                </div>
+                                
                                 
                                 <button type="submit" className="formBtn">Sign In</button>
                                 

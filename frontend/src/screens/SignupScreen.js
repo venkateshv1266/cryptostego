@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import {IconButton} from '@material-ui/core';
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import CryptoJS from 'crypto-js';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -13,6 +16,7 @@ function SignupScreen(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [confirmPassword, setConfirmPassword] = useState('');
 
     const redirect = props.location.search
@@ -33,6 +37,11 @@ function SignupScreen(props) {
             dispatch(register(name,email.trim(),hashedPassword));
         }
     }
+
+    const handleShowPasswordBtnClick = () => {
+        setShowPassword(!showPassword);
+    }
+
     useEffect(() => {
         if(userSignin.type === USER_SIGNIN_SUCCESS && isAuthorized.type === AUTHORIZE_SUCCESS) {
             props.history.push(redirect);
@@ -58,7 +67,15 @@ function SignupScreen(props) {
                                 email && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) && <Alert className="emailAlert" severity="error">Enter valid Email ID</Alert>
                             }
                             <label htmlFor="password">Password</label>
-                            <input type="password" id="password" placeholder="Enter password" required onChange={e => setPassword(e.target.value)}/>
+                            <div className="passwordInput">
+                                <input type={showPassword ? "text" : "password"} id="password" placeholder="Enter password" required 
+                                    onChange={e => setPassword(e.target.value)}
+                                />
+                                <IconButton className="eyeBtn" onClick={handleShowPasswordBtnClick}>
+                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </div>
+
                             {
                                 password && !(/^(?=.*[0-9])(?=.*[!@#$%^&*'])[a-zA-Z0-9!@#$%^&*']{6,16}$/.test(password)) && 
                                 (
