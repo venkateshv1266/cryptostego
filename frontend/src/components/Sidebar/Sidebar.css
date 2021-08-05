@@ -9,10 +9,12 @@
     top:0;
     left: -100%;
     transition: 0.3s ease-in-out;
+    opacity: 97%;
 }
 .sidebarContainerOpen {
     left: 0;
 }
+
 .activeSidebar > .navLink {
     color: #01bf71;
 }
@@ -35,7 +37,6 @@
 }
 .sidebarMenu > div {
     font-size: 1.5rem;
-    margin-bottom: 20px;
 }
 .btnWrapper {
     display: flex;
@@ -60,4 +61,14 @@
     transition: all 0.2s ease-in-out;
     background: #fff;
     color: #010606;
+}
+
+@media screen and (max-width:780px) {
+    .navItem {
+        width: 100%;
+    }
+    .navLink {
+        justify-content: center;
+        padding: 1rem;
+    }
 }

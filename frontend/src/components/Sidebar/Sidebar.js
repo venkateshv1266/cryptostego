@@ -16,10 +16,10 @@ function Sidebar(props) {
                 <FaTimes />
             </div>
             <div className="sidebarMenu">
-                <div className={`${props.currentActive==='home' ? 'activeSidebar' : ''} navItem`} onClick={props.toggle} >
+                <div className={`${props.currentActive==='home' ? 'activeSidebar' : ''} navItem navItemSidebar`} onClick={props.toggle} >
                     <Link className="navLink" to="/">Home</Link>
                 </div>
-                <div className={`${props.currentActive==='encoding' ? 'activeSidebar' : ''} navItem`} onClick={props.toggle}>
+                <div className={`${props.currentActive==='encoding' ? 'activeSidebar' : ''} navItem navItemSidebar`} onClick={props.toggle}>
                     <Link 
                         className="navLink" 
                         to={props.userInfo ? '/encoding' : '/signin?redirect=encoding'}
@@ -27,7 +27,7 @@ function Sidebar(props) {
                         Encoding
                     </Link>
                 </div>
-                <div className={`${props.currentActive==='decoding' ? 'activeSidebar' : ''} navItem`} onClick={props.toggle}>
+                <div className={`${props.currentActive==='decoding' ? 'activeSidebar' : ''} navItem navItemSidebar`} onClick={props.toggle}>
                     <Link 
                         className="navLink" 
                         to={props.userInfo ? '/decoding' : '/signin?redirect=decoding'}
@@ -35,7 +35,7 @@ function Sidebar(props) {
                         Decoding
                     </Link>
                 </div>
-                <div className={`${props.currentActive==='signup' || props.currentActive==='user' ? 'activeSidebar' : ''} navItem`} onClick={props.toggle}>
+                <div className={`${props.currentActive==='signup' || props.currentActive==='user' ? 'activeSidebar' : ''} navItem navItemSidebar`} onClick={props.toggle}>
                     <Link 
                         className="navLink" 
                         to={props.userInfo ? `/userprofile/${props.userInfo._id}` : '/signup'}
