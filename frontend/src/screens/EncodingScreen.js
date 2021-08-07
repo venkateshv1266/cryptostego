@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import GetAppIcon from '@material-ui/icons/GetApp';
 import { loadPlainImage, encode } from '../steganography';
 import {animateScroll as scroll} from 'react-scroll';
 import { Alert } from '@material-ui/lab';
@@ -9,6 +10,7 @@ import { IMAGE_UPLOAD_CLEAR } from '../constants/imageConstants';
 import { EMAIL_SEND_CLEAR } from '../constants/sendEmailConstants';
 import { AUTHORIZE_FAIL } from '../constants/userConstants';
 import { isAuthorizedUser } from '../actions/userActions';
+import Base64Downloader from 'react-base64-downloader';
 
 function EncodingScreen(props) { 
     const [message, setMessage] = useState('');
@@ -16,6 +18,7 @@ function EncodingScreen(props) {
     const [recipientEmail, setRecipientEmail] = useState('');
     const [isEncoded, setIsEncoded] = useState('');
     const [selectedImageURL, setSelectedImageURL] = useState("/images/blankimage.jpg");
+    const [stegoImageURL, setStegoImageURL] = useState("");
     const [error, setError] = useState(false);
     const [imageError, setImageError] = useState(false);
     const [isAuthorizedLoading, setIsAuthorizedLoading] = useState(true);
@@ -42,7 +45,7 @@ function EncodingScreen(props) {
         if(message && secretKey){
             setError(false);
             setImageError(false);
-            const stegoImageURL = await encode(message, secretKey, setIsEncoded, isAuthorized.authorizedUserInfo._id);
+            setStegoImageURL(await encode(message, secretKey, setIsEncoded, isAuthorized.authorizedUserInfo._id));
             dispatch(uploadImage(stegoImageURL, recipientEmail, secretKey));
         } else {
             setError(true);
@@ -127,7 +130,21 @@ function EncodingScreen(props) {
                                                 </div>
                                             )
                                         }
+                                        
+                                        
+                                        
                                     </form>
+                                    {
+                                        stegoImage &&  
+                                            (
+                                                <>
+                                                    <Base64Downloader className="downloadBtn" base64={stegoImageURL} downloadName="image" onDownloadSuccess={(e)=>e.preventDefault()}>
+                                                        Download Image
+                                                        <GetAppIcon />
+                                                    </Base64Downloader>
+                                                </>
+                                            )
+                                    }
                                     
                                 </div>
                                 <div className="column2 column2EncodeDecode">

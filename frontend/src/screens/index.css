@@ -267,7 +267,7 @@ video {
 .eyeBtn  {
   padding: 7px !important;
 }
-.formBtn {
+.formBtn, .downloadBtn {
   border-radius: 30px;
   background: #01193d;
   white-space: nowrap;
@@ -286,6 +286,18 @@ video {
   transition: all 0.2s ease-in-out;
   background: #01bf71;
   color: #000;
+}
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 5px;
+  background: #01193d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+.downloadBtn:hover {
+  background-color: #010e22;
 }
 .formBottomLine {
   display: flex;
@@ -466,6 +478,10 @@ video {
   .bannerP {
     font-size: 24px;
   }
+  .googleSigninBtn > div {
+    margin-left: -5%;
+    margin-right: 5% !important;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -488,7 +504,8 @@ video {
   }
   .aboutContent,
   .formContent,
-  .formBottomLine {
+  .formBottomLine,
+  .downloadBtn {
     margin: 20px;
   }
   .gridColumnHeading {

@@ -32,7 +32,7 @@ function ChangePasswordScreen(props) {
     useEffect(() => {
         dispatch(isAuthorizedUser(setIsAuthorizedLoading));
         if(changePasswordSuccess) {
-            dispatch({type: CLEAR_CHANGE_PASSWORD_STATE});
+            //dispatch({type: CLEAR_CHANGE_PASSWORD_STATE});
             props.history.push(`/userprofile/${userInfo._id}`);
         }
         props.setCurrentActive('');
