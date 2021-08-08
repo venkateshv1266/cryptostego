@@ -45,8 +45,9 @@ function EncodingScreen(props) {
         if(message && secretKey){
             setError(false);
             setImageError(false);
-            setStegoImageURL(await encode(message, secretKey, setIsEncoded, isAuthorized.authorizedUserInfo._id));
-            dispatch(uploadImage(stegoImageURL, recipientEmail, secretKey));
+            const resultImageURL = await encode(message, secretKey, setIsEncoded, isAuthorized.authorizedUserInfo._id);
+            dispatch(uploadImage(resultImageURL, recipientEmail, secretKey));
+            setStegoImageURL(resultImageURL);
         } else {
             setError(true);
         }
